@@ -2,6 +2,11 @@
 
 **Ruby UNIX-like which.**
 
+Tested with <a href="https://www.relishapp.com/rspec">RSpec</a>, <a href="https://github.com/thoughtbot/shoulda">shoulda</a> and <a href="http://travis-ci.org/#!/AlphaHydrae/which_works">Travis CI</a>.
+
+* master [![Build Status](https://secure.travis-ci.org/AlphaHydrae/which_works.png?branch=master)](http://travis-ci.org/AlphaHydrae/which_works)
+* develop [![Build Status](https://secure.travis-ci.org/AlphaHydrae/which_works.png?branch=develop)](http://travis-ci.org/AlphaHydrae/which_works)
+
 ## License (MIT)
 
 Copyright (c) 2011 Alpha Hydrae
