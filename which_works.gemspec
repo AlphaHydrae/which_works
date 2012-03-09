@@ -29,7 +29,8 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/which_works.rb",
     "spec/helper.rb",
-    "spec/which_spec.rb"
+    "spec/which_spec.rb",
+    "which_works.gemspec"
   ]
   s.homepage = "http://github.com/AlphaHydrae/which_works"
   s.licenses = ["MIT"]
