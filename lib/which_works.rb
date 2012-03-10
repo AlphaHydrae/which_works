@@ -56,6 +56,7 @@ module Which
       end
     end
 
+    found.uniq!
     if found.length <= 1
       options[:array] ? found : found.first
     else

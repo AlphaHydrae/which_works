@@ -17,4 +17,8 @@ describe ':all option' do
   it "should not find anything when given no command to find" do
     Which.which({ :all => true }).should be_nil
   end
+
+  it "should only find one executable file when given an absolute path" do
+    Which.which('/opt/local/bin/svn', :all => true).should == '/opt/local/bin/svn'
+  end
 end
