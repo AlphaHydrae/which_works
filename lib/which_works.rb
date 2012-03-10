@@ -1,6 +1,30 @@
 
+# The {Which} module can locate program files in the user's path.
+# See {Which.which}.
 module Which
 
+  # Locates a program file in the user's path.
+  #
+  # The which method takes a list of command names and searches the path
+  # for each executable file that would be run had these commands actually
+  # been invoked.
+  #
+  # By default, which will return nil if no executable was found, one
+  # string if one executable file was found, or an array if several were
+  # found. You can customize this behavior by passing the <tt>:array</tt>
+  # option.
+  #
+  # == Options
+  # * <tt>:all => boolean</tt> - List all instances of executables found
+  #   (instead of just the first one of each). False by default.
+  # * <tt>:array => boolean</tt> - Always return an array. False by default.
+  #
+  # == Examples
+  #   Which.which('ls')                  #=> "/bin/ls"
+  #   Which.which('unknown')             #=> nil
+  #   Which.which('ls', 'screen')        #=> [ "/bin/ls", "/usr/bin/screen" ]
+  #   Which.which('svn', :all => true)   #=> [ "/opt/local/bin/svn", "/usr/bin/svn" ]
+  #   Which.which('ls', :array => true)  #=> [ "/bin/ls" ]
   def self.which *programs
     
     found = []
