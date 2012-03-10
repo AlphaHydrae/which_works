@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "which_works"
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["AlphaHydrae"]
-  s.date = "2012-03-09"
+  s.date = "2012-03-10"
   s.description = "Ruby UNIX-like which."
   s.email = "hydrae.alpha@gmail.com"
   s.extra_rdoc_files = [
@@ -28,8 +28,10 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/which_works.rb",
+    "spec/all_spec.rb",
+    "spec/array_spec.rb",
+    "spec/basic_spec.rb",
     "spec/helper.rb",
-    "spec/which_spec.rb",
     "which_works.gemspec"
   ]
   s.homepage = "http://github.com/AlphaHydrae/which_works"

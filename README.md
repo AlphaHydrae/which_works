@@ -1,11 +1,38 @@
-# which_works
+# which\_works
 
-**Ruby UNIX-like which.**
+**Ruby UNIX-like which. Locates a program file in the user's path.**
+
+The `which` method takes a list of command names and searches the path
+for each executable file that would be run had these commands actually
+been invoked.
+
+```ruby
+Which.which('ls')            #=> "/bin/ls"
+Which.which('ls', 'screen')  #=> [ "/bin/ls", "/usr/bin/screen" ]
+Which.which('unknown')       #=> nil
+
+# you can also check an absolute path
+Which.which('/usr/bin/svn')  #=> "/usr/bin/svn"
+Which.which('/usr/bin/foo')  #=> nil
+
+# the :all option finds all executable files,
+# not just the first one found
+Which.which('svn', :all => true)   #=> [ "/opt/local/bin/svn", "/usr/bin/svn" ]
+
+# the :array option always returns an array
+Which.which('unknown', :array => true)       #=> []
+Which.which('ls', :array => true)            #=> [ "/bin/ls" ]
+Which.which('ls', 'screen', :array => true)  #=> [ "/bin/ls", "/usr/bin/screen" ]
+
+# combined options
+Which.which('ls', 'svn', :all => true, :array => true)
+#=> [ "/bin/ls", "/opt/local/bin/svn", "/usr/bin/svn" ]
+```
 
 Tested with <a href="https://www.relishapp.com/rspec">RSpec</a>, <a href="https://github.com/thoughtbot/shoulda">shoulda</a> and <a href="http://travis-ci.org/#!/AlphaHydrae/which_works">Travis CI</a>.
 
-* master [![Build Status](https://secure.travis-ci.org/AlphaHydrae/which_works.png?branch=master)](http://travis-ci.org/AlphaHydrae/which_works)
-* develop [![Build Status](https://secure.travis-ci.org/AlphaHydrae/which_works.png?branch=develop)](http://travis-ci.org/AlphaHydrae/which_works)
+* master [![Build Status](https://secure.travis-ci.org/AlphaHydrae/which_works.png?branch=master)](http://travis-ci.org/AlphaHydrae/which\_works)
+* develop [![Build Status](https://secure.travis-ci.org/AlphaHydrae/which_works.png?branch=develop)](http://travis-ci.org/AlphaHydrae/which\_works)
 
 ## License (MIT)
 
