@@ -25,6 +25,7 @@ module Which
   #   Which.which('ls', 'screen')        #=> [ "/bin/ls", "/usr/bin/screen" ]
   #   Which.which('svn', :all => true)   #=> [ "/opt/local/bin/svn", "/usr/bin/svn" ]
   #   Which.which('ls', :array => true)  #=> [ "/bin/ls" ]
+  #   Which.which('/usr/bin/screen')     #=> "/usr/bin/screen"
   def self.which *programs
     
     found = []
