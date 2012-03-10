@@ -1,20 +1,40 @@
 
-class Which
+module Which
 
-  def self.which cmd
+  def self.which *programs
+    
+    found = []
+    options = programs.last.kind_of?(Hash) ? programs.pop : {}
 
-    # valid file extensions (cross-platform)
-    extensions = ENV['PATHEXT'] ? ENV['PATHEXT'].split(';') : [ '' ]
+    programs.each do |program|
 
-    ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
+      program_found = false
 
-      extensions.each do |ext|
+      # valid file extensions (cross-platform)
+      extensions = ENV['PATHEXT'] ? ENV['PATHEXT'].split(';') : [ '' ]
 
-        absolute_path = File.expand_path "#{cmd}#{ext}", path
-        return absolute_path if File.executable? absolute_path
+      ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
+
+        extensions.each do |ext|
+
+          # using expand_path makes it work with absolute program paths
+          absolute_path = File.expand_path "#{program}#{ext}", path
+
+          if File.executable? absolute_path
+            program_found = true
+            found << absolute_path
+            break unless options[:all]
+          end
+        end
+
+        break if program_found && !options[:all]
       end
     end
 
-    return nil
+    if found.length <= 1
+      options[:array] ? found : found.first
+    else
+      found
+    end
   end
 end
