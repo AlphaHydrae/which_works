@@ -22,7 +22,7 @@ require 'which_works'
 
 module WhichSpecHelper
   UNIX_COMMANDS = %w( /bin/ls /usr/bin/screen /home/johndoe/bin/custom /opt/local/bin/svn /usr/bin/svn )
-  UNIX_PATH = "/bin:/usr/bin:/opt/local/bin"
+  UNIX_PATH = "/bin:/opt/local/bin:/usr/bin"
 
   def self.stub_unix!
     

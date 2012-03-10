@@ -35,4 +35,8 @@ describe Which do
   it "should not find a command that is not in the path" do
     Which.which('custom').should be_nil
   end
+
+  it "should find the first executable file in the path" do
+    Which.which('svn').should == '/opt/local/bin/svn'
+  end
 end
