@@ -1,10 +1,8 @@
 # which\_works
 
-**Ruby UNIX-like which.**
+**Ruby UNIX-like which. Locates a program file in the user's path.**
 
-Locates a program file in the user's path.
-
-The which method takes a list of command names and searches the path
+The `which` method takes a list of command names and searches the path
 for each executable file that would be run had these commands actually
 been invoked.
 
@@ -17,7 +15,8 @@ Which.which('unknown')       #=> nil
 Which.which('/usr/bin/svn')  #=> "/usr/bin/svn"
 Which.which('/usr/bin/foo')  #=> nil
 
-# the :all option finds all executable files, not just the first one
+# the :all option finds all executable files,
+# not just the first one found
 Which.which('svn', :all => true)   #=> [ "/opt/local/bin/svn", "/usr/bin/svn" ]
 
 # the :array option always returns an array
@@ -26,7 +25,8 @@ Which.which('ls', :array => true)            #=> [ "/bin/ls" ]
 Which.which('ls', 'screen', :array => true)  #=> [ "/bin/ls", "/usr/bin/screen" ]
 
 # combined options
-Which.which('ls', 'svn', :all => true, :array => true)  #=> [ "/bin/ls", "/opt/local/bin/svn", "/usr/bin/svn" ]
+Which.which('ls', 'svn', :all => true, :array => true)
+#    #=> [ "/bin/ls", "/opt/local/bin/svn", "/usr/bin/svn" ]
 ```
 
 Tested with <a href="https://www.relishapp.com/rspec">RSpec</a>, <a href="https://github.com/thoughtbot/shoulda">shoulda</a> and <a href="http://travis-ci.org/#!/AlphaHydrae/which_works">Travis CI</a>.
