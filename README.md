@@ -26,7 +26,7 @@ Which.which('ls', 'screen', :array => true)  #=> [ "/bin/ls", "/usr/bin/screen" 
 
 # combined options
 Which.which('ls', 'svn', :all => true, :array => true)
-#    #=> [ "/bin/ls", "/opt/local/bin/svn", "/usr/bin/svn" ]
+#=> [ "/bin/ls", "/opt/local/bin/svn", "/usr/bin/svn" ]
 ```
 
 Tested with <a href="https://www.relishapp.com/rspec">RSpec</a>, <a href="https://github.com/thoughtbot/shoulda">shoulda</a> and <a href="http://travis-ci.org/#!/AlphaHydrae/which_works">Travis CI</a>.
