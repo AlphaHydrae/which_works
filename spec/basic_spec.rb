@@ -1,27 +1,9 @@
 require 'helper'
 
 describe Which do
-  UNIX_COMMANDS = %w( /bin/ls /usr/bin/screen /home/johndoe/bin/custom /opt/local/bin/svn /usr/bin/svn )
-  UNIX_PATH = "/bin:/usr/bin:/opt/local/bin"
-
-  before :all do
-    UNIX_PATH.gsub!(/\:/, File::PATH_SEPARATOR).gsub!(/\//, File::SEPARATOR)
-  end
 
   before :each do
-
-    ENV.stub!(:[]) do |name|
-      case name
-      when 'PATH'
-        UNIX_PATH
-      when 'PATHEXT'
-        nil
-      end
-    end
-
-    File.stub!(:executable?) do |name|
-      UNIX_COMMANDS.include? name.to_s
-    end
+    WhichSpecHelper.stub_unix!
   end
 
   it "should find a single command" do
