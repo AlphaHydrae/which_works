@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = "which_works"
-  s.version = "0.2.0"
+  s.version = "1.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["AlphaHydrae"]
-  s.date = "2012-03-10"
-  s.description = "Ruby UNIX-like which."
+  s.date = "2012-03-11"
+  s.description = "Locates a program file in the user's path. The which method takes a list of command names and searches the path for each executable file that would be run had these commands actually been invoked."
   s.email = "hydrae.alpha@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
     "spec/array_spec.rb",
     "spec/basic_spec.rb",
     "spec/helper.rb",
+    "spec/options_spec.rb",
     "which_works.gemspec"
   ]
   s.homepage = "http://github.com/AlphaHydrae/which_works"
