@@ -56,7 +56,7 @@ module Which
       end
     end
 
-    found.uniq!
+    found.uniq! # FIXME: do not add to array if already included
     if found.length <= 1
       options[:array] ? found : found.first
     else
