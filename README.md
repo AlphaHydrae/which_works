@@ -27,6 +27,18 @@ Which.which('ls', 'screen', :array => true)  #=> [ "/bin/ls", "/usr/bin/screen" 
 # combined options
 Which.which('ls', 'svn', :all => true, :array => true)
 #=> [ "/bin/ls", "/opt/local/bin/svn", "/usr/bin/svn" ]
+
+# you can change the default options
+Which.options = { :all => true }
+Which.options[:array] = true
+Which.which('ls')                 #=> [ "/bin/ls" ]
+Which.which('svn')                #=> [ "/opt/local/bin/svn", "/usr/bin/svn" ]
+
+# default options can be overridden as usual
+Which.which('ls', :array => false)  #=> "/bin/ls"
+
+# see the current default options
+Which.options     #=> { :all => true, :array => true }
 ```
 
 Tested with <a href="https://www.relishapp.com/rspec">RSpec</a>, <a href="https://github.com/thoughtbot/shoulda">shoulda</a> and <a href="http://travis-ci.org/#!/AlphaHydrae/which_works">Travis CI</a>.
