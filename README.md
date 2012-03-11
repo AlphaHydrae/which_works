@@ -15,8 +15,8 @@ Which.which('unknown')       #=> nil
 Which.which('/usr/bin/svn')  #=> "/usr/bin/svn"
 Which.which('/usr/bin/foo')  #=> nil
 
-# the :all option finds all executable files,
-# not just the first one found
+# the :all option returns all executable files,
+# not just the first one found in the path
 Which.which('svn', :all => true)   #=> [ "/opt/local/bin/svn", "/usr/bin/svn" ]
 
 # the :array option always returns an array
@@ -31,8 +31,8 @@ Which.which('ls', 'svn', :all => true, :array => true)
 # you can change the default options
 Which.options = { :all => true }
 Which.options[:array] = true
-Which.which('ls')                 #=> [ "/bin/ls" ]
-Which.which('svn')                #=> [ "/opt/local/bin/svn", "/usr/bin/svn" ]
+Which.which('ls')       #=> [ "/bin/ls" ]
+Which.which('svn')      #=> [ "/opt/local/bin/svn", "/usr/bin/svn" ]
 
 # default options can be overridden as usual
 Which.which('ls', :array => false)  #=> "/bin/ls"
