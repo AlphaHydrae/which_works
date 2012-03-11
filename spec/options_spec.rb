@@ -24,6 +24,7 @@ describe 'Default Options' do
   it "should allow to clear default options" do
     Which.class_variable_set(:@@options, { :all => true, :array => true })
     Which.options = {}
+    Which.options.should == {}
     Which.which('ls').should == '/bin/ls'
   end
 
@@ -35,6 +36,7 @@ describe 'Default Options' do
   it "should copy the given options" do
     options = { :all => true, :array => true }
     Which.options = options
+    Which.options.should == options
     Which.options.should_not === options
   end
 end
