@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/AlphaHydrae/which_works"
   gem.license = "MIT"
   gem.summary = %Q{Ruby UNIX-like which.}
-  gem.description = %Q{Ruby UNIX-like which.}
+  gem.description = %Q{Locates a program file in the user's path. The which method takes a list of command names and searches the path for each executable file that would be run had these commands actually been invoked.}
   gem.email = "hydrae.alpha@gmail.com"
   gem.authors = ["AlphaHydrae"]
   # dependencies defined in Gemfile
