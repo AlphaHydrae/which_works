@@ -44,6 +44,7 @@ module Which
 
           # using expand_path makes it work with absolute program paths
           absolute_path = File.expand_path "#{program}#{ext}", path
+          next if found.include? absolute_path
 
           if File.executable? absolute_path
             program_found = true
@@ -56,7 +57,6 @@ module Which
       end
     end
 
-    found.uniq!
     if found.length <= 1
       options[:array] ? found : found.first
     else
