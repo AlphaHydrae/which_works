@@ -4,7 +4,7 @@ describe 'Default Options' do
 
   before :each do
     WhichSpecHelper.stub_unix!
-    Which.class_variable_set(:@@options, {})
+    Which.options.clear
   end
 
   it "should have no options by default" do
@@ -28,7 +28,7 @@ describe 'Default Options' do
   end
 
   it "should allow to clear default options" do
-    Which.class_variable_set(:@@options, { :all => true, :array => true })
+    Which.options = { :all => true, :array => true }
     Which.options = {}
     Which.options.should == {}
     Which.which('ls').should == '/bin/ls'
