@@ -55,7 +55,7 @@ describe 'Default Options' do
 
   it "should allow to override the :all option" do
     Which.options = { :all => true, :array => true }
-    Which.which('svn', :all => false).should == '/opt/local/bin/svn'
+    Which.which('svn', :all => false).should == [ '/opt/local/bin/svn' ]
   end
 
   it "should allow to override the :array option" do
@@ -65,8 +65,8 @@ describe 'Default Options' do
 
   it "should allow to override all options" do
     Which.options = { :all => true, :array => true }
-    Which.which('ls').should == '/bin/ls'
-    Which.which('svn').should == '/opt/local/bin/svn'
+    Which.which('ls', :all => false, :array => false).should == '/bin/ls'
+    Which.which('svn', :all => false, :array => false).should == '/opt/local/bin/svn'
   end
 
   it "should only accept a hash as default options" do
