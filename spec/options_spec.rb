@@ -39,4 +39,17 @@ describe 'Default Options' do
     Which.options.should == options
     Which.options.should_not === options
   end
+
+  it "should return its internal default options hash" do
+    Which.options[:array] = true
+    Which.options[:all] = 42
+    Which.options[:array].should be_true
+    Which.options[:all].should == 42
+  end
+
+  it "should only accept a hash as default options" do
+    [ nil, false, true, String.new, Array.new, 2, 4.5 ].each do |invalid|
+      lambda{ Which.options = invalid }.should raise_error(ArgumentError)
+    end
+  end
 end
