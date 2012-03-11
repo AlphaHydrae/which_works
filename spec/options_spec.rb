@@ -37,7 +37,7 @@ describe 'Default Options' do
     options = { :all => true, :array => true }
     Which.options = options
     Which.options.should == options
-    Which.options.should_not === options
+    Which.options.should_not equal(options)
   end
 
   it "should return its internal default options hash" do
