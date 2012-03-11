@@ -63,4 +63,17 @@ module Which
       found
     end
   end
+
+  def self.options
+    @@options
+  end
+
+  def self.options= options
+    raise ArgumentError, "Default options must be a hash, #{options.class.name} given." unless options.kind_of?(Hash)
+    @@options = options.dup
+  end
+
+  private
+
+  @@options = Hash.new
 end
