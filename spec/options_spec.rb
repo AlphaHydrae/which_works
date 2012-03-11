@@ -53,6 +53,22 @@ describe 'Default Options' do
     Which.options[:all].should == 42
   end
 
+  it "should allow to override the :all option" do
+    Which.options = { :all => true, :array => true }
+    Which.which('svn', :all => false).should == '/opt/local/bin/svn'
+  end
+
+  it "should allow to override the :array option" do
+    Which.options = { :all => true, :array => true }
+    Which.which('ls', :array => false).should == '/bin/ls'
+  end
+
+  it "should allow to override all options" do
+    Which.options = { :all => true, :array => true }
+    Which.which('ls').should == '/bin/ls'
+    Which.which('svn').should == '/opt/local/bin/svn'
+  end
+
   it "should only accept a hash as default options" do
     [ nil, false, true, String.new, Array.new, 2, 4.5 ].each do |invalid|
       lambda{ Which.options = invalid }.should raise_error(ArgumentError)
