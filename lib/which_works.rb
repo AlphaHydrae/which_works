@@ -65,10 +65,24 @@ module Which
     end
   end
 
+  # Returns the default options for {#which}. The returned
+  # hash can be modified directly.
+  #
+  # == Examples
+  #   Which.options                 #=> {}
+  #   Which.options = { :all => true }
+  #   Which.options                 #=> { :all => true }
+  #   Which.options[:array] = true  #=> { :all => true, :array => true }
   def self.options
     @@options
   end
 
+  # Sets the default options for {#which}.
+  #
+  # == Examples
+  #   Which.options = { :all => true, :array => true }
+  #   Which.which('ls')       #=> [ "/bin/ls" ]
+  #   Which.which('svn')      #=> [ "/opt/local/bin/svn", "/usr/bin/svn" ]
   def self.options= options
     raise ArgumentError, "Default options must be a hash, #{options.class.name} given." unless options.kind_of?(Hash)
     @@options = options.dup
@@ -76,5 +90,6 @@ module Which
 
   private
 
+  # Default options for {#which}.
   @@options = Hash.new
 end
