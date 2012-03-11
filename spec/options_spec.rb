@@ -21,6 +21,12 @@ describe 'Default Options' do
     Which.which('ls').should == [ '/bin/ls' ]
   end
 
+  it "should allow to set all options to true by default" do
+    Which.options = { :all => true, :array => true }
+    Which.which('ls').should == [ '/bin/ls' ]
+    Which.which('svn').should == [ '/opt/local/bin/svn', '/usr/bin/svn' ]
+  end
+
   it "should allow to clear default options" do
     Which.class_variable_set(:@@options, { :all => true, :array => true })
     Which.options = {}
