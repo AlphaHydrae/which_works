@@ -30,6 +30,7 @@ module Which
     
     found = []
     options = programs.last.kind_of?(Hash) ? programs.pop : {}
+    options = @@options.merge options
 
     programs.each do |program|
 
