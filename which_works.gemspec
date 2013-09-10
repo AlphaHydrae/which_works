@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["AlphaHydrae"]
-  s.date = "2012-03-11"
+  s.date = "2013-09-10"
   s.description = "Locates a program file in the user's path. The which method takes a list of command names and searches the path for each executable file that would be run had these commands actually been invoked."
   s.email = "hydrae.alpha@gmail.com"
   s.extra_rdoc_files = [
@@ -17,64 +17,55 @@ Gem::Specification.new do |s|
     "README.md"
   ]
   s.files = [
-    ".document",
-    ".rspec",
-    ".rvmrc",
-    ".travis.yml",
     "Gemfile",
-    "Gemfile.lock",
     "LICENSE.txt",
     "README.md",
-    "Rakefile",
     "VERSION",
-    "lib/which_works.rb",
-    "spec/all_spec.rb",
-    "spec/array_spec.rb",
-    "spec/basic_spec.rb",
-    "spec/helper.rb",
-    "spec/options_spec.rb",
-    "which_works.gemspec"
+    "lib/which_works.rb"
   ]
-  s.homepage = "http://github.com/AlphaHydrae/which_works"
+  s.homepage = "https://github.com/AlphaHydrae/which_works"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.17"
+  s.rubygems_version = "1.8.25"
   s.summary = "Ruby UNIX-like which."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<rake>, ["~> 0.9.2"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
-      s.add_development_dependency(%q<shoulda>, ["~> 2.11.3"])
-      s.add_development_dependency(%q<bundler>, [">= 0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.8.3"])
-      s.add_development_dependency(%q<simplecov>, ["~> 0.5.4"])
-      s.add_development_dependency(%q<yard>, ["~> 0.7.5"])
-      s.add_development_dependency(%q<rdiscount>, ["~> 1.6.8"])
-      s.add_development_dependency(%q<travis-lint>, ["~> 1.3.0"])
+      s.add_development_dependency(%q<rake>, ["~> 10.0"])
+      s.add_development_dependency(%q<rspec>, ["~> 2.0"])
+      s.add_development_dependency(%q<shoulda>, ["~> 3.0"])
+      s.add_development_dependency(%q<bundler>, ["~> 1.0"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.0"])
+      s.add_development_dependency(%q<simplecov>, ["~> 0.0"])
+      s.add_development_dependency(%q<yard>, ["~> 0.0"])
+      s.add_development_dependency(%q<rdiscount>, ["~> 1.0"])
+      s.add_development_dependency(%q<travis-lint>, ["~> 1.0"])
+      s.add_development_dependency(%q<rake-version>, ["~> 0.0"])
     else
-      s.add_dependency(%q<rake>, ["~> 0.9.2"])
-      s.add_dependency(%q<rspec>, ["~> 2.8.0"])
-      s.add_dependency(%q<shoulda>, ["~> 2.11.3"])
-      s.add_dependency(%q<bundler>, [">= 0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
-      s.add_dependency(%q<simplecov>, ["~> 0.5.4"])
-      s.add_dependency(%q<yard>, ["~> 0.7.5"])
-      s.add_dependency(%q<rdiscount>, ["~> 1.6.8"])
-      s.add_dependency(%q<travis-lint>, ["~> 1.3.0"])
+      s.add_dependency(%q<rake>, ["~> 10.0"])
+      s.add_dependency(%q<rspec>, ["~> 2.0"])
+      s.add_dependency(%q<shoulda>, ["~> 3.0"])
+      s.add_dependency(%q<bundler>, ["~> 1.0"])
+      s.add_dependency(%q<jeweler>, ["~> 1.0"])
+      s.add_dependency(%q<simplecov>, ["~> 0.0"])
+      s.add_dependency(%q<yard>, ["~> 0.0"])
+      s.add_dependency(%q<rdiscount>, ["~> 1.0"])
+      s.add_dependency(%q<travis-lint>, ["~> 1.0"])
+      s.add_dependency(%q<rake-version>, ["~> 0.0"])
     end
   else
-    s.add_dependency(%q<rake>, ["~> 0.9.2"])
-    s.add_dependency(%q<rspec>, ["~> 2.8.0"])
-    s.add_dependency(%q<shoulda>, ["~> 2.11.3"])
-    s.add_dependency(%q<bundler>, [">= 0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
-    s.add_dependency(%q<simplecov>, ["~> 0.5.4"])
-    s.add_dependency(%q<yard>, ["~> 0.7.5"])
-    s.add_dependency(%q<rdiscount>, ["~> 1.6.8"])
-    s.add_dependency(%q<travis-lint>, ["~> 1.3.0"])
+    s.add_dependency(%q<rake>, ["~> 10.0"])
+    s.add_dependency(%q<rspec>, ["~> 2.0"])
+    s.add_dependency(%q<shoulda>, ["~> 3.0"])
+    s.add_dependency(%q<bundler>, ["~> 1.0"])
+    s.add_dependency(%q<jeweler>, ["~> 1.0"])
+    s.add_dependency(%q<simplecov>, ["~> 0.0"])
+    s.add_dependency(%q<yard>, ["~> 0.0"])
+    s.add_dependency(%q<rdiscount>, ["~> 1.0"])
+    s.add_dependency(%q<travis-lint>, ["~> 1.0"])
+    s.add_dependency(%q<rake-version>, ["~> 0.0"])
   end
 end
 

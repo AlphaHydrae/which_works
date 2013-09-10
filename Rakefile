@@ -15,12 +15,13 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "which_works"
-  gem.homepage = "http://github.com/AlphaHydrae/which_works"
+  gem.homepage = "https://github.com/AlphaHydrae/which_works"
   gem.license = "MIT"
   gem.summary = %Q{Ruby UNIX-like which.}
   gem.description = %Q{Locates a program file in the user's path. The which method takes a list of command names and searches the path for each executable file that would be run had these commands actually been invoked.}
   gem.email = "hydrae.alpha@gmail.com"
   gem.authors = ["AlphaHydrae"]
+  gem.files = %x[git ls-files -- lib].split("\n") + %w(Gemfile LICENSE.txt README.md VERSION)
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
