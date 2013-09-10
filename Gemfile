@@ -15,4 +15,5 @@ group :development do
   gem 'yard', '~> 0.0'
   gem 'rdiscount', '~> 1.0'
   gem 'travis-lint', '~> 1.0'
+  gem 'rake-version', '~> 0.0'
 end

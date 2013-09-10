@@ -32,6 +32,16 @@ RSpec::Core::RakeTask.new do |t|
   # Put spec opts in a file named .rspec in root
 end
 
+[ 'version', 'version:bump:major', 'version:bump:minor', 'version:bump:patch', 'version:write' ].each do |task|
+  Rake::Task[task].clear
+end
+
+# version tasks
+require 'rake-version'
+RakeVersion::Tasks.new do |v|
+  v.copy 'lib/which_works.rb'
+end
+
 task :default => :spec
 
 desc "Generate documentation"
