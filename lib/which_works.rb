@@ -2,7 +2,7 @@
 # The {Which} module can locate program files in the user's path.
 # See {Which.which}.
 module Which
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
 
   # Locates a program file in the user's path.
   #
