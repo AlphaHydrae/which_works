@@ -1,0 +1,1 @@
+- use fakefs in specs
