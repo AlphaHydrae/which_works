@@ -35,7 +35,7 @@ module WhichSpecHelper
     UNIX_COMMANDS.each{ |com| com.gsub!(/\//, File::SEPARATOR) }
     UNIX_PATH.gsub!(/\:/, File::PATH_SEPARATOR).gsub!(/\//, File::SEPARATOR)
 
-    ENV.stub!(:[]) do |name|
+    ENV.stub(:[]) do |name|
       case name
       when 'PATH'
         UNIX_PATH
@@ -44,7 +44,7 @@ module WhichSpecHelper
       end
     end
 
-    File.stub!(:executable?) do |name|
+    File.stub(:executable?) do |name|
       UNIX_COMMANDS.include? name.to_s
     end
   end

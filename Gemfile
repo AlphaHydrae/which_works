@@ -6,13 +6,13 @@ source "http://rubygems.org"
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
-  gem 'rake', '~> 0.9.2'
-  gem 'rspec', '~> 2.8.0'
-  gem 'shoulda', '~> 2.11.3'
-  gem 'bundler'
-  gem 'jeweler', '~> 1.8.3'
-  gem 'simplecov', '~> 0.5.4'
-  gem 'yard', '~> 0.7.5'
-  gem 'rdiscount', '~> 1.6.8'
-  gem 'travis-lint', '~> 1.3.0'
+  gem 'rake', '~> 10.0'
+  gem 'rspec', '~> 2.0'
+  gem 'shoulda', '~> 3.0'
+  gem 'bundler', '~> 1.0'
+  gem 'jeweler', '~> 1.0'
+  gem 'simplecov', '~> 0.0'
+  gem 'yard', '~> 0.0'
+  gem 'rdiscount', '~> 1.0'
+  gem 'travis-lint', '~> 1.0'
 end
