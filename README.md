@@ -5,6 +5,7 @@
 [![Gem Version](https://badge.fury.io/rb/which_works.png)](http://badge.fury.io/rb/which\_works)
 [![Dependency Status](https://gemnasium.com/AlphaHydrae/which_works.png)](https://gemnasium.com/AlphaHydrae/which\_works)
 [![Build Status](https://secure.travis-ci.org/AlphaHydrae/which_works.png?branch=master)](http://travis-ci.org/AlphaHydrae/which\_works)
+[![Coverage Status](https://coveralls.io/repos/AlphaHydrae/which_works/badge.png?branch=master)](https://coveralls.io/r/AlphaHydrae/which\_works?branch=master)
 
 The `which` method takes a list of command names and searches the path
 for each executable file that would be run had these commands actually

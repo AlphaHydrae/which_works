@@ -9,7 +9,9 @@ group :development do
   gem 'rake'
   gem 'rspec'
   gem 'jeweler'
+  gem 'gem-release'
+  gem 'rake-version'
   gem 'simplecov'
   gem 'travis-lint'
-  gem 'rake-version'
+  gem 'coveralls', require: false
 end
